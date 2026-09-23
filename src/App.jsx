@@ -122,11 +122,25 @@ export default function App() {
     setUploadedFiles(prev => prev.filter((_, i) => i !== index));
   };
 
-  const handleFormSubmit = (e, formType) => {
+  const handleFormSubmit = async (e, formType) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const fd = new FormData(e.target);
+    const formElement = e.target;
+    const fd = new FormData(formElement);
+    
+    fd.append('form_type', formType);
+    if (!fd.get('service_trade') && selectedTrade) {
+      fd.append('service_trade', selectedTrade);
+    }
+
+    // Attach files if any uploaded via drag-and-drop / file picker
+    if (uploadedFiles && uploadedFiles.length > 0) {
+      uploadedFiles.forEach(file => {
+        fd.append('blueprints', file);
+      });
+    }
+
     const submission = {
       name: fd.get('name') || '',
       email: fd.get('email') || '',
@@ -138,6 +152,16 @@ export default function App() {
       filesCount: uploadedFiles.length,
       formType: formType
     };
+
+    try {
+      const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:6060';
+      await fetch(`${backendUrl}/api/send-email`, {
+        method: 'POST',
+        body: fd
+      });
+    } catch (err) {
+      console.error('Failed to submit form to backend:', err);
+    }
 
     if (window.dataLayer) {
       window.dataLayer.push({
@@ -155,12 +179,10 @@ export default function App() {
       });
     }
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setThankYouData(submission);
-      setUploadedFiles([]);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 600);
+    setIsSubmitting(false);
+    setThankYouData(submission);
+    setUploadedFiles([]);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
