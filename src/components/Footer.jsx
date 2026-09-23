@@ -20,12 +20,12 @@ export default function Footer({ onOpenLegal }) {
             <span>(718) 719-6171</span>
           </a>
 
-          <a href="mailto:info@paradiseestimating.com" className="footer-contact-link" data-track-cta="footer-email">
+          <a href="mailto:sales@paradiseestimating.com" className="footer-contact-link" data-track-cta="footer-email">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
               <rect x="2" y="4" width="20" height="16" rx="2"/>
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
             </svg>
-            <span>info@paradiseestimating.com</span>
+            <span>sales@paradiseestimating.com</span>
           </a>
         </div>
 

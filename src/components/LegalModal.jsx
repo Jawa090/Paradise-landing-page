@@ -23,7 +23,7 @@ export default function LegalModal({ type, onClose }) {
               </p>
               <h4 style={{ margin: '1rem 0 0.5rem', color: 'var(--color-dark)' }}>2. Contact Information</h4>
               <p>
-                Your contact information is only used by our team to provide takeoff turnaround updates and project quotes. For questions, email us at <a href="mailto:info@paradiseestimating.com" style={{ color: 'var(--color-primary)' }}>info@paradiseestimating.com</a> or call (718) 719-6171.
+                Your contact information is only used by our team to provide takeoff turnaround updates and project quotes. For questions, email us at <a href="mailto:sales@paradiseestimating.com" style={{ color: 'var(--color-primary)' }}>sales@paradiseestimating.com</a> or call (718) 719-6171.
               </p>
             </>
           ) : (
