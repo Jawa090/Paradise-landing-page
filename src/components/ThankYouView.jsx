@@ -1,6 +1,13 @@
 import React from 'react';
 
 export default function ThankYouView({ data, onReset }) {
+  const safeData = data || {
+    name: 'Valued Contractor',
+    trade: 'General Construction Takeoff',
+    phone: 'On File',
+    filesCount: 0
+  };
+
   return (
     <section className="section" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center' }}>
       <div className="container">
@@ -20,20 +27,20 @@ export default function ThankYouView({ data, onReset }) {
           <div className="thank-you-sheet">
             <div className="sheet-line">
               <span style={{ color: 'var(--color-text-light)' }}>Contact Name:</span>
-              <strong style={{ color: 'var(--color-dark)' }}>{data.name}</strong>
+              <strong style={{ color: 'var(--color-dark)' }}>{safeData.name || 'Valued Contractor'}</strong>
             </div>
             <div className="sheet-line">
               <span style={{ color: 'var(--color-text-light)' }}>Trade / Scope:</span>
-              <strong style={{ color: 'var(--color-primary)' }}>{data.trade}</strong>
+              <strong style={{ color: 'var(--color-primary)' }}>{safeData.trade || 'General Construction Takeoff'}</strong>
             </div>
             <div className="sheet-line">
               <span style={{ color: 'var(--color-text-light)' }}>Phone:</span>
-              <strong style={{ color: 'var(--color-dark)' }}>{data.phone}</strong>
+              <strong style={{ color: 'var(--color-dark)' }}>{safeData.phone || 'On File'}</strong>
             </div>
-            {data.filesCount > 0 && (
+            {safeData.filesCount > 0 && (
               <div className="sheet-line">
                 <span style={{ color: 'var(--color-text-light)' }}>Plans Attached:</span>
-                <strong style={{ color: 'var(--color-dark)' }}>{data.filesCount} file(s)</strong>
+                <strong style={{ color: 'var(--color-dark)' }}>{safeData.filesCount} file(s)</strong>
               </div>
             )}
           </div>
@@ -46,8 +53,17 @@ export default function ThankYouView({ data, onReset }) {
               <span>Call (718) 719-6171</span>
             </a>
 
-            <button type="button" className="btn btn-secondary" onClick={onReset}>
-              &larr; Submit Another Project
+            <button 
+              type="button" 
+              className="btn btn-secondary" 
+              onClick={onReset}
+              style={{ width: '100%', maxWidth: '360px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
+            >
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+              <span>Return to Main Page</span>
             </button>
           </div>
         </div>

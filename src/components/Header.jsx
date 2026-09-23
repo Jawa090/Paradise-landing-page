@@ -1,10 +1,24 @@
 import React from 'react';
 
-export default function Header({ onGetQuoteClick }) {
+export default function Header({ onGetQuoteClick, onLogoClick }) {
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    if (onLogoClick) {
+      onLogoClick();
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <a href="#hero" className="brand-logo-link" aria-label="Paradise Estimating">
+        <a 
+          href="/" 
+          onClick={handleLogoClick} 
+          className="brand-logo-link" 
+          aria-label="Paradise Estimating Home"
+        >
           <img src="/logo.webp" alt="Paradise Estimating" className="brand-logo-img" width="68" height="68" />
         </a>
 

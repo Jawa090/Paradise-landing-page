@@ -106,6 +106,64 @@ export default function App() {
     }
   };
 
+  const DEFAULT_THANK_YOU = {
+    name: 'Valued Contractor',
+    email: '',
+    phone: '(718) 719-6171',
+    company: '',
+    trade: 'General Estimating / Takeoff',
+    location: 'USA',
+    deadline: 'Within 24–48 Hours',
+    filesCount: 0,
+    formType: 'direct'
+  };
+
+  const isThankYouPath = () => {
+    const p = window.location.pathname.replace(/\/$/, '');
+    return p === '/thank-you' || p.endsWith('/thank-you');
+  };
+
+  // Check initial URL slug on mount
+  useEffect(() => {
+    if (isThankYouPath()) {
+      try {
+        const cached = sessionStorage.getItem('pe_last_submission');
+        setThankYouData(cached ? JSON.parse(cached) : DEFAULT_THANK_YOU);
+      } catch {
+        setThankYouData(DEFAULT_THANK_YOU);
+      }
+    }
+  }, []);
+
+  // Listen to browser Back / Forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      if (isThankYouPath()) {
+        try {
+          const cached = sessionStorage.getItem('pe_last_submission');
+          setThankYouData(cached ? JSON.parse(cached) : DEFAULT_THANK_YOU);
+        } catch {
+          setThankYouData(DEFAULT_THANK_YOU);
+        }
+      } else {
+        setThankYouData(null);
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Return to home page
+  const handleGoHome = () => {
+    setThankYouData(null);
+    const search = window.location.search || '';
+    if (isThankYouPath()) {
+      window.history.pushState({ page: 'home' }, '', `/${search}`);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleAddFiles = (newFiles) => {
     setUploadedFiles(prev => {
       const list = [...prev];
@@ -177,21 +235,48 @@ export default function App() {
         utm_term: trackingParams.utm_term,
         utm_content: trackingParams.utm_content
       });
+      window.dataLayer.push({
+        event: 'page_view',
+        page_path: '/thank-you',
+        page_title: 'Thank You | Paradise Estimating'
+      });
+    }
+
+    try {
+      sessionStorage.setItem('pe_last_submission', JSON.stringify(submission));
+    } catch (err) {
+      console.warn('SessionStorage save failed:', err);
     }
 
     setIsSubmitting(false);
     setThankYouData(submission);
     setUploadedFiles([]);
+
+    // Update browser URL slug to /thank-you while keeping query/tracking parameters
+    const search = window.location.search || '';
+    if (!isThankYouPath()) {
+      window.history.pushState({ page: 'thank-you' }, '', `/thank-you${search}`);
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <div className="react-landing-app">
       <PromoBanner timeLeft={timeLeft} />
-      <Header onGetQuoteClick={() => scrollTo('quote-card-target')} />
+      <Header 
+        onGetQuoteClick={() => {
+          if (thankYouData) {
+            handleGoHome();
+            setTimeout(() => scrollTo('quote-card-target'), 100);
+          } else {
+            scrollTo('quote-card-target');
+          }
+        }} 
+        onLogoClick={handleGoHome}
+      />
 
       {thankYouData ? (
-        <ThankYouView data={thankYouData} onReset={() => setThankYouData(null)} />
+        <ThankYouView data={thankYouData} onReset={handleGoHome} />
       ) : (
         <main>
           <Hero 
@@ -228,9 +313,18 @@ export default function App() {
         </main>
       )}
 
-      <Footer onOpenLegal={setLegalModalType} />
+      <Footer onOpenLegal={setLegalModalType} onLogoClick={handleGoHome} />
 
-      <MobileStickyCTA onGetQuoteClick={() => scrollTo('upload-section')} />
+      <MobileStickyCTA 
+        onGetQuoteClick={() => {
+          if (thankYouData) {
+            handleGoHome();
+            setTimeout(() => scrollTo('upload-section'), 100);
+          } else {
+            scrollTo('upload-section');
+          }
+        }} 
+      />
 
       {sampleModalOpen && (
         <SampleModal 

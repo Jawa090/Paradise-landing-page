@@ -1,14 +1,36 @@
 import React from 'react';
 
-export default function Footer({ onOpenLegal }) {
+export default function Footer({ onOpenLegal, onLogoClick }) {
+  const handleHomeClick = (e) => {
+    if (onLogoClick) {
+      e.preventDefault();
+      onLogoClick();
+    }
+  };
+
   return (
     <footer className="page-footer">
       <div className="container footer-row">
         <div className="footer-brand-side">
-          <img src="/logo.webp" alt="Paradise Estimating Logo" className="footer-logo-pic" width="54" height="54" />
+          <a href="/" onClick={handleHomeClick} className="footer-logo-link" aria-label="Paradise Estimating Home">
+            <img src="/logo.webp" alt="Paradise Estimating Logo" className="footer-logo-pic" width="54" height="54" />
+          </a>
           <div>
-            <span className="footer-title-txt">Paradise Estimating</span>
+            <a href="/" onClick={handleHomeClick} className="footer-title-link">
+              <span className="footer-title-txt">Paradise Estimating</span>
+            </a>
             <p className="footer-sub-txt">Professional Construction Estimating &amp; Quantity Takeoffs across the USA.</p>
+            <div className="footer-parent-org">
+              <span>Part of </span>
+              <a 
+                href="https://contractorslist.com/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="footer-parent-link"
+              >
+                contractorslist.com
+              </a>
+            </div>
           </div>
         </div>
 
