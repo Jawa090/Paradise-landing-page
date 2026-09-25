@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PromoBanner from './components/PromoBanner.jsx';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import CoreValues from './components/CoreValues.jsx';
@@ -21,13 +20,6 @@ export default function App() {
   const [sampleModalOpen, setSampleModalOpen] = useState(false);
   const [legalModalType, setLegalModalType] = useState(null); // 'privacy' | 'terms' | null
   const [thankYouData, setThankYouData] = useState(null);
-
-  const [timeLeft, setTimeLeft] = useState({
-    days: '07',
-    hours: '09',
-    minutes: '44',
-    seconds: '24'
-  });
 
   const [trackingParams, setTrackingParams] = useState({
     gclid: '',
@@ -55,40 +47,6 @@ export default function App() {
     } catch (e) {
       console.warn('Tracking init:', e);
     }
-  }, []);
-
-  // Countdown timer
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        let s = parseInt(prev.seconds, 10) - 1;
-        let m = parseInt(prev.minutes, 10);
-        let h = parseInt(prev.hours, 10);
-        let d = parseInt(prev.days, 10);
-
-        if (s < 0) {
-          s = 59;
-          m -= 1;
-          if (m < 0) {
-            m = 59;
-            h -= 1;
-            if (h < 0) {
-              h = 23;
-              d = Math.max(0, d - 1);
-            }
-          }
-        }
-
-        return {
-          days: String(d).padStart(2, '0'),
-          hours: String(h).padStart(2, '0'),
-          minutes: String(m).padStart(2, '0'),
-          seconds: String(s).padStart(2, '0')
-        };
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
   }, []);
 
   // Smooth scroll
@@ -206,7 +164,7 @@ export default function App() {
       company: fd.get('company') || '',
       trade: fd.get('service_trade') || selectedTrade || 'General Estimating / Takeoff',
       location: fd.get('location') || 'USA',
-      deadline: fd.get('bid_deadline') || 'Within 48 Hours',
+      deadline: fd.get('bid_deadline') || 'Within 24–48 Hours',
       filesCount: uploadedFiles.length,
       formType: formType
     };
@@ -262,7 +220,7 @@ export default function App() {
 
   return (
     <div className="react-landing-app">
-      <PromoBanner timeLeft={timeLeft} />
+      {/* HEADER: Original logo on left, Phone + Get a Free Quote on right, no navigation leaks */}
       <Header 
         onGetQuoteClick={() => {
           if (thankYouData) {
@@ -279,26 +237,36 @@ export default function App() {
         <ThankYouView data={thankYouData} onReset={handleGoHome} />
       ) : (
         <main>
+          {/* SECTION 1: HERO + SHORT QUOTE FORM + ECOSYSTEM BADGE + NEW CLIENT OFFER */}
           <Hero 
             selectedTrade={selectedTrade}
             onTradeChange={setSelectedTrade}
             onQuoteSubmit={(e) => handleFormSubmit(e, 'hero_quick_quote')}
             onUploadClick={() => scrollTo('upload-section')}
+            onGetQuoteClick={() => scrollTo('quote-card-target')}
             isSubmitting={isSubmitting}
           />
 
+          {/* SECTION 2: CORE VALUE + TRUST METRICS */}
           <CoreValues />
 
+          {/* SECTION 3: ESTIMATING & TRADE COVERAGE */}
           <TradeCoverage 
             selectedTrade={selectedTrade}
             onSelectTrade={setSelectedTrade}
             onUploadClick={() => scrollTo('upload-section')}
           />
 
+          {/* SECTION 4: HOW IT WORKS (4 SIMPLE STEPS) */}
           <HowItWorks />
 
-          <TrustProof onOpenSample={() => setSampleModalOpen(true)} />
+          {/* SECTION 5: REAL DELIVERABLE + TRUST PROOF (Interactive Commercial/MEP/Concrete tabs & software workflows) */}
+          <TrustProof 
+            onOpenSample={() => setSampleModalOpen(true)} 
+            onUploadClick={() => scrollTo('upload-section')}
+          />
 
+          {/* SECTION 6: FULL QUOTE + PLAN UPLOAD FORM */}
           <PlanUploadForm 
             selectedTrade={selectedTrade}
             onTradeChange={setSelectedTrade}
@@ -313,8 +281,10 @@ export default function App() {
         </main>
       )}
 
+      {/* MINIMAL FOOTER */}
       <Footer onOpenLegal={setLegalModalType} onLogoClick={handleGoHome} />
 
+      {/* MOBILE STICKY BOTTOM BAR: Get Quote + Call Now */}
       <MobileStickyCTA 
         onGetQuoteClick={() => {
           if (thankYouData) {
@@ -326,6 +296,7 @@ export default function App() {
         }} 
       />
 
+      {/* Interactive Deliverable Sample Modal */}
       {sampleModalOpen && (
         <SampleModal 
           onClose={() => setSampleModalOpen(false)}
@@ -336,6 +307,7 @@ export default function App() {
         />
       )}
 
+      {/* Legal Disclaimers Modal */}
       {legalModalType && (
         <LegalModal 
           type={legalModalType}

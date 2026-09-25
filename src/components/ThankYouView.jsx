@@ -21,7 +21,7 @@ export default function ThankYouView({ data, onReset }) {
           <h2 className="title-lg" style={{ marginBottom: '0.75rem' }}>Your Project Has Been Submitted</h2>
           
           <p style={{ color: 'var(--color-text-muted)', fontSize: '1.05rem', lineHeight: '1.6', marginBottom: '1.75rem' }}>
-            Our estimating team has received your information and will review your project requirements. You will receive an itemized quote and turnaround confirmation shortly.
+            Our estimating team has received your information and will review the project scope and requirements.
           </p>
 
           <div className="thank-you-sheet">
