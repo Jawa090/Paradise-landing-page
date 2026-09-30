@@ -185,16 +185,26 @@ export default function App() {
       if (crmApiKey) {
         const firstFile = uploadedFiles && uploadedFiles.length > 0 ? uploadedFiles[0] : null;
         const fileNames = uploadedFiles && uploadedFiles.length > 0 ? uploadedFiles.map(f => f.name).join(', ') : null;
-        const messageStr = fd.get('project_details') || '';
+        const details = fd.get('project_details') || fd.get('message') || '';
 
-        fetch(crmEndpoint, {
+        const notesParts = [];
+        if (submission.company) notesParts.push(`Company: ${submission.company}`);
+        if (submission.trade) notesParts.push(`Trade/Scope: ${submission.trade}`);
+        if (submission.location && submission.location !== 'USA') notesParts.push(`Location: ${submission.location}`);
+        if (submission.deadline && submission.deadline !== 'Within 24–48 Hours') notesParts.push(`Bid Deadline: ${submission.deadline}`);
+        if (details) notesParts.push(`Project Details: ${details}`);
+        if (fileNames) notesParts.push(`📎 Blueprint File: ${fileNames}`);
+
+        const notesText = notesParts.join('\n');
+
+        await fetch(crmEndpoint, {
           method: "POST",
           headers: { "Content-Type": "application/json", "X-API-Key": crmApiKey },
           body: JSON.stringify({
             name: submission.name,
             email: submission.email,
             phone: submission.phone,
-            notes: firstFile ? `${messageStr}\n\n📎 Blueprint File: ${fileNames}` : messageStr,
+            notes: notesText,
             attachment_name: firstFile ? firstFile.name : null
           })
         }).catch(err => console.error("[CRM Direct] Error:", err));
