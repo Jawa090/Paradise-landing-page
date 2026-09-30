@@ -121,7 +121,7 @@ export default function PlanUploadForm({
     e.preventDefault();
     const tradeVal = formData.service_trade || selectedTrade;
     const currentValues = { ...formData, service_trade: tradeVal };
-
+    
     const newErrors = {
       name: validateField('name', currentValues.name),
       company: validateField('company', currentValues.company),
@@ -156,7 +156,7 @@ export default function PlanUploadForm({
       }
       return;
     }
-
+    
     setFormAlert('');
     onSubmit(e);
   };

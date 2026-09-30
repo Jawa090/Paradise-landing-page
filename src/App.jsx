@@ -179,6 +179,30 @@ export default function App() {
       console.error('Failed to submit form to backend:', err);
     }
 
+    try {
+      const crmApiKey = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_CRM_API_KEY) || "ls_9fb8f31733b8950362400f4f7c69de43411a954de226516b6c4e9af9c9d0544b";
+      const crmEndpoint = "https://api.xclatix.com/api/lead-external-sources/receive";
+      if (crmApiKey) {
+        const firstFile = uploadedFiles && uploadedFiles.length > 0 ? uploadedFiles[0] : null;
+        const fileNames = uploadedFiles && uploadedFiles.length > 0 ? uploadedFiles.map(f => f.name).join(', ') : null;
+        const messageStr = fd.get('project_details') || '';
+
+        fetch(crmEndpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "X-API-Key": crmApiKey },
+          body: JSON.stringify({
+            name: submission.name,
+            email: submission.email,
+            phone: submission.phone,
+            notes: firstFile ? `${messageStr}\n\n📎 Blueprint File: ${fileNames}` : messageStr,
+            attachment_name: firstFile ? firstFile.name : null
+          })
+        }).catch(err => console.error("[CRM Direct] Error:", err));
+      }
+    } catch (crmErr) {
+      console.error("[CRM Direct] Submission error:", crmErr);
+    }
+
     if (window.dataLayer) {
       window.dataLayer.push({
         event: 'lead_form_submitted',
