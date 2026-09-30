@@ -170,13 +170,23 @@ export default function App() {
     };
 
     try {
-      const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:6060';
-      await fetch(`${backendUrl}/api/send-email`, {
-        method: 'POST',
-        body: fd
-      });
+      let backendUrl = import.meta.env.VITE_BACKEND_URL;
+      if (backendUrl && (backendUrl.startsWith('http://') || backendUrl.startsWith('https://')) && !backendUrl.includes('vite_crm_api_key')) {
+        if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && backendUrl.includes('localhost')) {
+          backendUrl = null;
+        }
+      } else {
+        backendUrl = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? 'http://localhost:6060' : null;
+      }
+
+      if (backendUrl) {
+        await fetch(`${backendUrl.replace(/\/$/, '')}/api/send-email`, {
+          method: 'POST',
+          body: fd
+        }).catch(err => console.warn('Email backend notification notice:', err));
+      }
     } catch (err) {
-      console.error('Failed to submit form to backend:', err);
+      // Non-critical backend error
     }
 
     try {
