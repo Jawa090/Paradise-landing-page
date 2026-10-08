@@ -66,7 +66,7 @@ export default function CoreValues() {
               <img 
                 src={logo.src} 
                 alt={logo.name} 
-                style={{ maxHeight: '28px', maxWidth: '110px', objectFit: 'contain' }} 
+                style={{ maxHeight: '48px', maxWidth: '160px', objectFit: 'contain' }} 
               />
             </div>
           ))}

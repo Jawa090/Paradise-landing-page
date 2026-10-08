@@ -107,7 +107,7 @@ export default function PreFAQSection({ onUploadClick, onGetQuoteClick }) {
                     <img 
                       src={item.logo} 
                       alt={`${item.author} Company`} 
-                      style={{ height: '24px', maxWidth: '70px', objectFit: 'contain', opacity: 0.85 }} 
+                      style={{ height: '42px', maxWidth: '120px', objectFit: 'contain', opacity: 0.95 }} 
                     />
                   </div>
                 </div>
