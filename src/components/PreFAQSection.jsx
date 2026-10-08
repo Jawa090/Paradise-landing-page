@@ -163,7 +163,9 @@ export default function PreFAQSection({ onUploadClick, onGetQuoteClick }) {
               <button
                 type="button"
                 className="btn"
-                onClick={onGetQuoteClick || scrollToQuote}
+                onClick={()=>{
+                    window.location.href='tel:+17187196171'
+                }}
                 style={{
                   backgroundColor: '#ffffff',
                   color: '#0f172a',

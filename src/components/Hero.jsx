@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import CustomVideoPlayer from './CustomVideoPlayer';
 
 const serviceOptions = [
   'Commercial Estimating',
@@ -207,18 +208,8 @@ export default function Hero({
             <span>✓ NDA available</span>
           </div>
 
-          <div className="hero-video-ad-box" style={{ marginTop: '1.5rem', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 10px 25px -5px rgba(0,0,0,0.08)', backgroundColor: '#0f172a' }}>
-            <video 
-              src="/video.mp4" 
-              controls 
-              autoPlay 
-              muted 
-              loop 
-              playsInline 
-              style={{ width: '100%', height: 'auto', display: 'block', maxHeight: '320px', objectFit: 'cover' }}
-            >
-              Your browser does not support the video tag.
-            </video>
+          <div className="hero-video-ad-box" style={{ marginTop: '1.5rem' }}>
+            <CustomVideoPlayer src="/video.mp4" />
           </div>
         </div>
 

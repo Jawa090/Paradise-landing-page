@@ -42,7 +42,7 @@ export default function Footer({ onOpenLegal, onLogoClick, onUploadClick, onGetQ
             <button
               type="button"
               className="btn"
-              onClick={onGetQuoteClick || scrollToQuote}
+              onClick={()=>{window.location.href='tel:+17187196171'}}
               style={{ backgroundColor: 'transparent', color: '#ffffff', borderRadius: '9999px', padding: '0.85rem 1.8rem', fontWeight: 600, fontSize: '0.95rem', border: '1px solid #475569', cursor: 'pointer' }}
             >
               Talk to an estimator
@@ -63,13 +63,13 @@ export default function Footer({ onOpenLegal, onLogoClick, onUploadClick, onGetQ
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '2rem' }}>
           
           {/* Left Column: Brand & Addresses */}
-          <div style={{ maxWidth: '650px' }}>
-            <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#ffffff', marginBottom: '0.75rem' }}>Paradise Estimating</h3>
+          <div style={{ maxWidth: '500px' }}>
+            <img src="logo.webp" alt="Paradise Estimating" style={{fontSize: '1.15rem', fontWeight: 800, color: '#ffffff', marginBottom: '0.75rem', width: '100px', height: 'auto' }}/>
             <p style={{ fontSize: '0.88rem', color: '#94a3b8', lineHeight: 1.5, marginBottom: '1.5rem' }}>
               Construction estimating and quantity takeoff services for U.S. contractors since 2012.
             </p>
 
-            {/* 3 USA Regional Locations */}
+            {/* 4 USA Regional Locations */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1.25rem', marginTop: '1rem' }}>
               <div>
                 <strong style={{ display: 'block', fontSize: '0.72rem', letterSpacing: '0.05em', color: '#56b32b', marginBottom: '0.25rem' }}>
@@ -95,6 +95,14 @@ export default function Footer({ onOpenLegal, onLogoClick, onUploadClick, onGetQ
                 </strong>
                 <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.45, margin: 0 }}>
                   123 Construction Blvd, Suite 101<br />Orlando, FL 32801
+                </p>
+              </div>
+               <div>
+                <strong style={{ display: 'block', fontSize: '0.72rem', letterSpacing: '0.05em', color: '#56b32b', marginBottom: '0.25rem' }}>
+                  USA | CALIFORNIA
+                </strong>
+                <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.45, margin: 0 }}>
+                  1234 Sunset Boulevard, Suite 567 <br />Los Angeles, CA 90028 USA
                 </p>
               </div>
             </div>

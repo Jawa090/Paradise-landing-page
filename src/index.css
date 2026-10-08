@@ -2594,3 +2594,32 @@ textarea {
     transform: translateX(0%);
   }
 }
+
+/* Custom Video Player Range Sliders */
+.custom-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #56b32b;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 6px rgba(86, 179, 43, 0.8);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.custom-range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+  background-color: #65c635;
+}
+
+.custom-range-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #56b32b;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 6px rgba(86, 179, 43, 0.8);
+  cursor: pointer;
+}
