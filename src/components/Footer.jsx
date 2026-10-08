@@ -60,23 +60,23 @@ export default function Footer({ onOpenLegal, onLogoClick, onUploadClick, onGetQ
 
       {/* Bottom Main Footer details */}
       <div className="footer-bottom-section" style={{ padding: '3.5rem 1.5rem 2.5rem 1.5rem', backgroundColor: '#070d18' }}>
-        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '2rem' }}>
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '3rem' }}>
           
           {/* Left Column: Brand & Addresses */}
-          <div style={{ maxWidth: '500px' }}>
+          <div style={{ flex: '1 1 650px', maxWidth: '750px' }}>
             <img src="logo.webp" alt="Paradise Estimating" style={{fontSize: '1.15rem', fontWeight: 800, color: '#ffffff', marginBottom: '0.75rem', width: '100px', height: 'auto' }}/>
-            <p style={{ fontSize: '0.88rem', color: '#94a3b8', lineHeight: 1.5, marginBottom: '1.5rem' }}>
+            <p style={{ fontSize: '0.88rem', color: '#94a3b8', lineHeight: 1.5, marginBottom: '1.75rem' }}>
               Construction estimating and quantity takeoff services for U.S. contractors since 2012.
             </p>
 
-            {/* 4 USA Regional Locations */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1.25rem', marginTop: '1rem' }}>
+            {/* 5 USA Regional Locations Grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem 2rem' }}>
               <div>
                 <strong style={{ display: 'block', fontSize: '0.72rem', letterSpacing: '0.05em', color: '#56b32b', marginBottom: '0.25rem' }}>
                   USA | NEW YORK
                 </strong>
                 <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.45, margin: 0 }}>
-                  896 Bay Ridge Avenue<br />Brooklyn NY 11220
+                  896 Bay Ridge Avenue<br />Brooklyn, NY 11220
                 </p>
               </div>
 
@@ -85,7 +85,7 @@ export default function Footer({ onOpenLegal, onLogoClick, onUploadClick, onGetQ
                   USA | TEXAS
                 </strong>
                 <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.45, margin: 0 }}>
-                  1001 McKinney St, Suite 1100<br />Houston, TX 77002, USA
+                  1001 McKinney St, Suite 1100<br />Houston, TX 77002
                 </p>
               </div>
 
@@ -94,24 +94,34 @@ export default function Footer({ onOpenLegal, onLogoClick, onUploadClick, onGetQ
                   USA | FLORIDA
                 </strong>
                 <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.45, margin: 0 }}>
-                  123 Construction Blvd, Suite 101<br />Orlando, FL 32801
+                  111 N Orange Ave, Suite 800<br />Orlando, FL 32801
                 </p>
               </div>
-               <div>
+
+              <div>
                 <strong style={{ display: 'block', fontSize: '0.72rem', letterSpacing: '0.05em', color: '#56b32b', marginBottom: '0.25rem' }}>
                   USA | CALIFORNIA
                 </strong>
                 <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.45, margin: 0 }}>
-                  1234 Sunset Boulevard, Suite 567 <br />Los Angeles, CA 90028 USA
+                  400 S Hope St, Suite 900<br />Los Angeles, CA 90071
+                </p>
+              </div>
+
+              <div>
+                <strong style={{ display: 'block', fontSize: '0.72rem', letterSpacing: '0.05em', color: '#56b32b', marginBottom: '0.25rem' }}>
+                  USA | ARIZONA
+                </strong>
+                <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.45, margin: 0 }}>
+                  250 N Central Ave, Suite 400<br />Phoenix, AZ 85004
                 </p>
               </div>
             </div>
           </div>
 
           {/* Right Column: Contact Details (Vertically Centered in Row) */}
-          <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <div style={{ marginBottom: '0.4rem' }}>
-              <a href="tel:7187196171" style={{ fontSize: '1.1rem', fontWeight: 800, color: '#ffffff', textDecoration: 'none' }}>
+          <div style={{ textAlign: 'right', minWidth: '220px' }}>
+            <div style={{ marginBottom: '0.5rem' }}>
+              <a href="tel:7187196171" style={{ fontSize: '1.15rem', fontWeight: 800, color: '#ffffff', textDecoration: 'none' }}>
                 (718) 719–6171
               </a>
             </div>
