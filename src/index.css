@@ -169,11 +169,11 @@ textarea {
    TOP PROMO BAR & LIVE COUNTDOWN TIMER
    ========================================================================== */
 .top-promo-bar {
-  background: linear-gradient(90deg, #64bd24 0%, #74cc36 50%, #64bd24 100%);
-  color: #081702;
-  padding: 0.45rem 0;
-  font-size: 0.84rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: #5bbd32;
+  color: #0b1a04;
+  padding: 0.35rem 0;
+  font-size: 0.82rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .top-promo-inner {
@@ -187,23 +187,23 @@ textarea {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background-color: rgba(0, 0, 0, 0.14);
-  padding: 0.25rem 0.8rem;
+  background-color: rgba(0, 0, 0, 0.12);
+  padding: 0.2rem 0.85rem;
   border-radius: var(--radius-pill);
   font-weight: 700;
   color: #071701;
   transition: background-color 0.2s;
+  font-size: 0.8rem;
 }
 
 .top-phone-pill:hover {
-  background-color: rgba(0, 0, 0, 0.22);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .top-promo-offer {
   font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
+  font-size: 0.84rem;
+  color: #051401;
 }
 
 .countdown-box {
@@ -2557,5 +2557,40 @@ textarea {
 
   .footer-meta-side {
     align-items: flex-start;
+  }
+}
+
+/* ==========================================================================
+   REVIEWS CONTINUOUS TICKER SLIDER (Left to Right, Pause on Hover)
+   ========================================================================== */
+.reviews-slider-track-wrap {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.reviews-slider-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: reviewsTicker 30s linear infinite;
+}
+
+.reviews-slider-track-wrap:hover .reviews-slider-track {
+  animation-play-state: paused;
+}
+
+.review-card-slide {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+@keyframes reviewsTicker {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }

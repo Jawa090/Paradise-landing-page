@@ -12,6 +12,14 @@ import SampleModal from './components/SampleModal.jsx';
 import LegalModal from './components/LegalModal.jsx';
 import ThankYouView from './components/ThankYouView.jsx';
 
+import PromoBanner from './components/PromoBanner.jsx';
+import PricingSection from './components/PricingSection.jsx';
+import WhyOutsourceSection from './components/WhyOutsourceSection.jsx';
+import EstimatingSupportSection from './components/EstimatingSupportSection.jsx';
+import ProjectsEstimatedSection from './components/ProjectsEstimatedSection.jsx';
+import PreFAQSection from './components/PreFAQSection.jsx';
+import FAQSection from './components/FAQSection.jsx';
+
 export default function App() {
   const [selectedTrade, setSelectedTrade] = useState('');
   const [uploadedFiles, setUploadedFiles] = useState([]);
@@ -264,6 +272,9 @@ export default function App() {
 
   return (
     <div className="react-landing-app">
+      {/* TOP PROMO BANNER */}
+      <PromoBanner />
+
       {/* HEADER: Original logo on left, Phone + Get a Free Quote on right, no navigation leaks */}
       <Header 
         onGetQuoteClick={() => {
@@ -281,7 +292,7 @@ export default function App() {
         <ThankYouView data={thankYouData} onReset={handleGoHome} />
       ) : (
         <main>
-          {/* SECTION 1: HERO + SHORT QUOTE FORM + ECOSYSTEM BADGE + NEW CLIENT OFFER */}
+          {/* 1. HERO + QUICK QUOTE FORM */}
           <Hero 
             selectedTrade={selectedTrade}
             onTradeChange={setSelectedTrade}
@@ -291,26 +302,35 @@ export default function App() {
             isSubmitting={isSubmitting}
           />
 
-          {/* SECTION 2: CORE VALUE + TRUST METRICS */}
+          {/* 2. TRUST STRIP: 5 METRICS + CLIENT LOGOS */}
           <CoreValues />
 
-          {/* SECTION 3: ESTIMATING & TRADE COVERAGE */}
-          <TradeCoverage 
-            selectedTrade={selectedTrade}
-            onSelectTrade={setSelectedTrade}
-            onUploadClick={() => scrollTo('upload-section')}
-          />
-
-          {/* SECTION 4: HOW IT WORKS (4 SIMPLE STEPS) */}
+          {/* 3. HOW IT WORKS (3 SIMPLE STEPS) */}
           <HowItWorks />
 
-          {/* SECTION 5: REAL DELIVERABLE + TRUST PROOF (Interactive Commercial/MEP/Concrete tabs & software workflows) */}
+          {/* 4. DARK DELIVERABLES SHOWCASE ("See what your estimate looks like") */}
           <TrustProof 
             onOpenSample={() => setSampleModalOpen(true)} 
             onUploadClick={() => scrollTo('upload-section')}
           />
 
-          {/* SECTION 6: FULL QUOTE + PLAN UPLOAD FORM */}
+          {/* 5. TRANSPARENT PRICING ($150–$250, $400–$600, $2,500/mo) + 20% OFF OFFER BANNER */}
+          <PricingSection 
+            onUploadClick={() => scrollTo('upload-section')}
+          />
+
+          {/* 6. WHY OUTSOURCE ESTIMATING */}
+          <WhyOutsourceSection />
+
+          {/* 7. ESTIMATING SUPPORT FOR EVERY TYPE OF CONTRACTOR + TRADES PILLS */}
+          <EstimatingSupportSection 
+            onUploadClick={() => scrollTo('upload-section')}
+          />
+
+          {/* 8. PROJECTS WE'VE ESTIMATED */}
+          <ProjectsEstimatedSection />
+
+          {/* 9. FULL PLAN UPLOAD FORM */}
           <PlanUploadForm 
             selectedTrade={selectedTrade}
             onTradeChange={setSelectedTrade}
@@ -322,6 +342,15 @@ export default function App() {
             onSubmit={(e) => handleFormSubmit(e, 'full_plan_upload')}
             isSubmitting={isSubmitting}
           />
+
+          {/* 10. TRUSTED REVIEWS & UPCOMING BID CTA */}
+          <PreFAQSection 
+            onUploadClick={() => scrollTo('upload-section')}
+            onGetQuoteClick={() => scrollTo('quote-card-target')}
+          />
+
+          {/* 11. FREQUENTLY ASKED QUESTIONS */}
+          <FAQSection />
         </main>
       )}
 

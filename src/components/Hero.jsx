@@ -145,176 +145,82 @@ export default function Hero({
 
         {/* Left Column: Headlines, USPs, Offers & Proof */}
         <div className="hero-content-col">
-          <div className="hero-tag">
-            <span className="tag-dot"></span>
-            <span>Professional Construction Estimating &amp; Takeoff Services</span>
+          <div className="hero-tag" style={{ backgroundColor: '#eef8ea', color: '#3d8618', borderRadius: '9999px', padding: '0.25rem 0.85rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem', fontWeight: 600 }}>
+            <span>Professional construction estimating</span>
           </div>
 
-          <h1 className="hero-heading">
-            Get Accurate Construction Estimates in <span className="text-green">24–48 Hours</span>
+          <h1 className="hero-heading" style={{ fontSize: '2.75rem', fontWeight: 800, lineHeight: 1.15, marginTop: '0.75rem', color: '#0f172a' }}>
+            Get Accurate Construction Estimates &amp; Takeoffs in <span style={{ color: '#56b32b', backgroundColor: '#eef8ea', padding: '0 0.3rem', borderRadius: '4px' }}>24–48 Hours</span>
           </h1>
 
-          <p className="hero-intro">
-            Professional construction estimating and quantity takeoff services for contractors, subcontractors and construction companies across the USA.
+          <p className="hero-intro" style={{ fontSize: '1rem', color: '#475569', marginTop: '1rem', lineHeight: 1.6 }}>
+            Professional construction estimating and quantity takeoff services for contractors, subcontractors, builders and developers across the U.S.
           </p>
 
-          {/* CORE USP ROW (4 Items) */}
-          <div className="hero-proof-bar hero-proof-grid-4">
-            <div className="proof-cell">
-              <div className="proof-icon">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.2">
-                  <circle cx="12" cy="13" r="8" />
-                  <path d="M12 9v4l2.5 2.5" />
-                  <path d="M10 2h4" />
-                  <path d="M12 2v3" />
-                </svg>
-              </div>
-              <div className="proof-info">
-                <strong>24–48 Hour Turnaround</strong>
-                <span>Fast bid submittals</span>
-              </div>
-            </div>
+          <p className="hero-subintro" style={{ fontSize: '0.88rem', color: '#64748b', marginTop: '0.5rem', lineHeight: 1.5 }}>
+            Upload your plans and our estimating team will prepare a detailed, bid-ready estimate with material quantities, labor and pricing — delivered in Excel and PDF.
+          </p>
 
-            <div className="proof-cell">
-              <div className="proof-icon">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.2">
-                  <circle cx="12" cy="12" r="10" />
-                  <circle cx="12" cy="12" r="6" />
-                  <path d="m9 12 2 2 4-4" />
-                </svg>
-              </div>
-              <div className="proof-info">
-                <strong>Accuracy Guaranteed</strong>
-                <span>Certified quality</span>
-              </div>
+          {/* New Customer Offer Box & Action Row */}
+          <div className="hero-offer-cta-box" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1.5rem', marginBottom: '1.25rem', backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', padding: '1rem', borderRadius: '12px' }}>
+            <div className="offer-pill-badge" style={{ backgroundColor: '#0f172a', color: '#ffffff', padding: '0.5rem 0.75rem', borderRadius: '6px', textAlign: 'center', flexShrink: 0 }}>
+              <span style={{ fontSize: '0.65rem', display: 'block', letterSpacing: '0.05em', textTransform: 'uppercase', opacity: 0.8 }}>NEW CUSTOMER OFFER</span>
+              <strong style={{ fontSize: '0.85rem', fontWeight: 700 }}>20% OFF your first estimate</strong>
             </div>
-
-            <div className="proof-cell">
-              <div className="proof-icon">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.2">
-                  <path d="M3 7l9-4 9 4-9 4-9-4z" />
-                  <path d="M3 12l9 4 9-4" />
-                  <path d="M3 17l9 4 9-4" />
-                </svg>
-              </div>
-              <div className="proof-info">
-                <strong>All-Trades Coverage</strong>
-                <span>Full scope support</span>
-              </div>
-            </div>
-
-            <div className="proof-cell">
-              <div className="proof-icon">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.2">
-                  <path d="M12 2v20" />
-                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                  <path d="M4 11l4-4 4 4" />
-                </svg>
-              </div>
-              <div className="proof-info">
-                <strong>Up to 50% Lower Cost</strong>
-                <span>Fraction of in-house</span>
-              </div>
-            </div>
-          </div>
-
-          {/* New Client Offer Banner */}
-          <div className="new-client-offer-banner">
-            <div className="offer-badge-pill">SPECIAL OFFER</div>
-            <div className="offer-content">
-              <strong>New Clients Save 20% on Their First Estimate</strong>
-              <p>Save 20% on your first estimate as a new Paradise Estimating client.</p>
-            </div>
+            <p style={{ fontSize: '0.8rem', color: '#475569', margin: 0 }}>
+              For new clients, applied to your first project.
+            </p>
           </div>
 
           {/* CTAs */}
-          <div className="hero-actions">
+          <div className="hero-actions" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '1rem' }}>
             <button
               type="button"
-              className="btn btn-primary btn-lg"
+              className="btn btn-primary"
               onClick={onGetQuoteClick || (() => {
                 const el = document.getElementById('quote-card-target');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               })}
               data-track-cta="hero-get-quote"
+              style={{ backgroundColor: '#56b32b', borderColor: '#56b32b', color: '#ffffff', borderRadius: '9999px', padding: '0.75rem 1.6rem', fontWeight: 700 }}
             >
-              <span>Get a Free Quote</span>
-              <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor">
-                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
+              <span>Upload plans — Get my quote</span>
             </button>
 
             <button
               type="button"
-              className="btn btn-secondary btn-lg"
-              onClick={onUploadClick}
-              data-track-cta="hero-upload-plans"
+              className="btn btn-secondary"
+              onClick={() => {
+                const el = document.getElementById('quote-card-target');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              data-track-cta="hero-talk-estimator"
+              style={{ borderRadius: '9999px', padding: '0.75rem 1.4rem', fontWeight: 600, borderColor: '#cbd5e1', color: '#0f172a' }}
             >
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="17 8 12 3 7 8" />
-                <line x1="12" y1="3" x2="12" y2="15" />
-              </svg>
-              <span>Upload Your Plans</span>
+              <span>Talk to an estimator</span>
             </button>
           </div>
 
-          {/* Top-Notch Interactive Takeoff Showcase with Real Photos */}
-          <div className="hero-showcase-container">
-            <div className="hero-showcase-header">
-              <div className="showcase-title-side">
-                <span className="live-dot-pulse"></span>
-                <strong>Live Project Takeoff Output</strong>
-              </div>
-              <div className="showcase-toggle-pills">
-                {heroImages.map((img, idx) => (
-                  <button
-                    key={img.id}
-                    type="button"
-                    className={`showcase-toggle-btn ${activeImageIndex === idx ? 'active-pill' : ''}`}
-                    onClick={() => setActiveImageIndex(idx)}
-                  >
-                    <span>{img.label}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="hero-image-wrap">
-              <img
-                src={currentImage.src}
-                alt={currentImage.alt}
-                width="640"
-                height="360"
-                key={currentImage.id}
-                className="hero-main-photo"
-              />
-
-              {/* Floating Verified Trust Badges on Image */}
-              <div className="hero-photo-floating-badge top-left">
-                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="var(--color-primary)" strokeWidth="3">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>24–48h Turnaround Guaranteed</span>
-              </div>
-
-              <div className="hero-photo-floating-badge top-right">
-                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <path d="M3 9h18M9 21V9" />
-                </svg>
-                <span>CSI MasterFormat 16/50</span>
-              </div>
-
-              <div className="hero-image-badge">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="var(--color-primary)" strokeWidth="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>PlanSwift &amp; Bluebeam Certified Workflows</span>
-              </div>
-            </div>
+          <div className="hero-bullets" style={{ display: 'flex', flexWrap: 'wrap', gap: '1.25rem', fontSize: '0.78rem', color: '#475569', marginTop: '0.75rem' }}>
+            <span>✓ 24–48 hour turnaround</span>
+            <span>✓ 50,000+ contractors served</span>
+            <span>✓ 100+ estimators</span>
+            <span>✓ NDA available</span>
           </div>
 
+          <div className="hero-video-ad-box" style={{ marginTop: '1.5rem', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 10px 25px -5px rgba(0,0,0,0.08)', backgroundColor: '#0f172a' }}>
+            <video 
+              src="/video.mp4" 
+              controls 
+              autoPlay 
+              muted 
+              loop 
+              playsInline 
+              style={{ width: '100%', height: 'auto', display: 'block', maxHeight: '320px', objectFit: 'cover' }}
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
 
         {/* Right Column: Short Quote Form */}
@@ -474,21 +380,16 @@ export default function Hero({
                 )}
               </div>
 
-              <button type="submit" className="btn btn-primary btn-block quote-submit-btn" disabled={isSubmitting} data-track-cta="hero-submit-quote">
+              <button type="submit" className="btn btn-primary btn-block quote-submit-btn" disabled={isSubmitting} data-track-cta="hero-submit-quote" style={{ backgroundColor: '#56b32b', borderColor: '#56b32b', color: '#ffffff', borderRadius: '9999px', padding: '0.85rem 1.5rem', fontWeight: 700, fontSize: '1.05rem' }}>
                 {isSubmitting ? (
                   <span>Processing Quote...</span>
                 ) : (
-                  <>
-                    <span>Get My Quote</span>
-                    <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor">
-                      <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </>
+                  <span>Get My Quote &rarr;</span>
                 )}
               </button>
 
-              <div className="quote-discount-notice">
-                <span>🎉 <strong>New clients save 20%</strong> on their first estimate.</span>
+              <div className="quote-discount-notice" style={{ backgroundColor: '#eef8ea', border: '1px solid #dcf0d3', color: '#3d8618', padding: '0.5rem 0.75rem', borderRadius: '8px', textAlign: 'center', fontSize: '0.8rem', marginTop: '0.75rem' }}>
+                <span>🌱 <strong>New clients save 20%</strong> on their first estimate.</span>
               </div>
 
               <div className="quote-card-footer">

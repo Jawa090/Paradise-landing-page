@@ -2,85 +2,68 @@ import React from 'react';
 
 export default function HowItWorks() {
   return (
-    <section className="section section-flow" id="how-it-works">
-      <div className="container">
+    <section className="how-it-works-section" id="how-it-works" style={{ backgroundColor: '#ffffff', padding: '4.5rem 1.5rem', fontFamily: 'var(--font-main)' }}>
+      <div className="container" style={{ maxWidth: '1150px', margin: '0 auto' }}>
         
-        {/* Section Header */}
-        <div className="section-head text-center">
-          <span className="badge-tag">STREAMLINED 4-STEP PROCESS</span>
-          <h2 className="title-lg">From Plans to Estimate in 4 Simple Steps</h2>
-          <div className="brand-rule"></div>
+        <div style={{ marginBottom: '2.5rem' }}>
+          <span style={{ backgroundColor: '#eef8ea', color: '#3d8618', borderRadius: '9999px', padding: '0.25rem 0.85rem', fontSize: '0.78rem', fontWeight: 600, display: 'inline-block', marginBottom: '0.75rem' }}>
+            How it works
+          </span>
+          <h2 style={{ fontSize: '2.4rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>
+            Get your estimate in 3 simple steps
+          </h2>
         </div>
 
-        {/* 4 Steps Grid */}
-        <div className="flow-row">
+        {/* 3 Steps Grid */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem', marginBottom: '2.5rem' }}>
           
           {/* Step 01 */}
-          <div className="flow-card">
-            <div className="flow-card-head">
-              <span className="flow-step-num">01</span>
-              <div className="flow-icon-bubble">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/>
-                  <path d="M12 12v9"/>
-                  <path d="m16 16-4-4-4 4"/>
-                </svg>
-              </div>
-            </div>
-            <h3 className="flow-card-title">Upload Your Plans</h3>
-            <p className="flow-card-desc">Send your drawings, plans and available project documents.</p>
+          <div style={{ borderTop: '2px solid #0f172a', paddingTop: '1.25rem' }}>
+            <span style={{ fontSize: '2.2rem', fontWeight: 800, color: '#56b32b', display: 'block', lineHeight: 1, marginBottom: '0.75rem' }}>01</span>
+            <strong style={{ fontSize: '0.9rem', letterSpacing: '0.04em', textTransform: 'uppercase', color: '#0f172a', display: 'block', marginBottom: '0.5rem' }}>
+              UPLOAD YOUR PLANS
+            </strong>
+            <p style={{ fontSize: '0.88rem', color: '#64748b', lineHeight: 1.55, margin: 0 }}>
+              Send drawings, specifications or project documents — PDF, DWG or CAD.
+            </p>
           </div>
 
           {/* Step 02 */}
-          <div className="flow-card">
-            <div className="flow-card-head">
-              <span className="flow-step-num">02</span>
-              <div className="flow-icon-bubble">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="11" cy="11" r="8"/>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                  <path d="M8 11h6"/>
-                  <path d="M11 8v6"/>
-                </svg>
-              </div>
-            </div>
-            <h3 className="flow-card-title">We Review Your Scope</h3>
-            <p className="flow-card-desc">The Paradise team reviews project requirements, trade, scope and bid deadline.</p>
+          <div style={{ borderTop: '2px solid #e2e8f0', paddingTop: '1.25rem' }}>
+            <span style={{ fontSize: '2.2rem', fontWeight: 800, color: '#56b32b', display: 'block', lineHeight: 1, marginBottom: '0.75rem' }}>02</span>
+            <strong style={{ fontSize: '0.9rem', letterSpacing: '0.04em', textTransform: 'uppercase', color: '#0f172a', display: 'block', marginBottom: '0.5rem' }}>
+              WE BUILD YOUR ESTIMATE
+            </strong>
+            <p style={{ fontSize: '0.88rem', color: '#64748b', lineHeight: 1.55, margin: 0 }}>
+              We confirm scope and price, then a specialist estimator performs the takeoff and pricing. A senior estimator reviews it before delivery.
+            </p>
           </div>
 
           {/* Step 03 */}
-          <div className="flow-card">
-            <div className="flow-card-head">
-              <span className="flow-step-num">03</span>
-              <div className="flow-icon-bubble">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="5" width="20" height="14" rx="2"/>
-                  <line x1="2" y1="10" x2="22" y2="10"/>
-                  <path d="M7 15h2"/>
-                  <path d="M15 15h2"/>
-                </svg>
-              </div>
-            </div>
-            <h3 className="flow-card-title">Receive Your Quote</h3>
-            <p className="flow-card-desc">Get project-specific pricing and expected turnaround.</p>
+          <div style={{ borderTop: '2px solid #e2e8f0', paddingTop: '1.25rem' }}>
+            <span style={{ fontSize: '2.2rem', fontWeight: 800, color: '#56b32b', display: 'block', lineHeight: 1, marginBottom: '0.75rem' }}>03</span>
+            <strong style={{ fontSize: '0.9rem', letterSpacing: '0.04em', textTransform: 'uppercase', color: '#0f172a', display: 'block', marginBottom: '0.5rem' }}>
+              RECEIVE A BID-READY ESTIMATE
+            </strong>
+            <p style={{ fontSize: '0.88rem', color: '#64748b', lineHeight: 1.55, margin: 0 }}>
+              Get an organized Excel and PDF estimate, typically within 24–48 hours.
+            </p>
           </div>
 
-          {/* Step 04 */}
-          <div className="flow-card">
-            <div className="flow-card-head">
-              <span className="flow-step-num">04</span>
-              <div className="flow-icon-bubble">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                  <polyline points="14 2 14 8 20 8"/>
-                  <path d="m9 15 2 2 4-4"/>
-                </svg>
-              </div>
-            </div>
-            <h3 className="flow-card-title">Receive Your Estimate</h3>
-            <p className="flow-card-desc">Receive the completed estimate or quantity takeoff.</p>
-          </div>
+        </div>
 
+        <div>
+          <button 
+            type="button" 
+            className="btn"
+            onClick={() => {
+              const el = document.getElementById('upload-section');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
+            style={{ backgroundColor: '#56b32b', color: '#ffffff', borderRadius: '9999px', padding: '0.75rem 1.6rem', fontWeight: 700, fontSize: '0.9rem', border: 'none', cursor: 'pointer' }}
+          >
+            Upload my plans
+          </button>
         </div>
 
       </div>
