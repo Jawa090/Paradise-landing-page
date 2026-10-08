@@ -177,8 +177,8 @@ export default function Hero({
             <button
               type="button"
               className="btn btn-primary"
-              onClick={onGetQuoteClick || (() => {
-                const el = document.getElementById('quote-card-target');
+              onClick={onUploadClick || (() => {
+                const el = document.getElementById('upload-section');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               })}
               data-track-cta="hero-get-quote"
@@ -189,10 +189,9 @@ export default function Hero({
 
             <button
               type="button"
-              className="btn btn-secondary"
+              className="btn"
               onClick={() => {
-                const el = document.getElementById('quote-card-target');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
+                window.location.href = 'tel:7187196171';
               }}
               data-track-cta="hero-talk-estimator"
               style={{ borderRadius: '9999px', padding: '0.75rem 1.4rem', fontWeight: 600, borderColor: '#cbd5e1', color: '#0f172a' }}
@@ -233,8 +232,8 @@ export default function Hero({
                 src="/logo11.png"
                 alt="ContractorsList.com"
                 className="eco-contractors-logo"
-                width="115"
-                height="26"
+                width="275"
+                height="44"
               />
             </div>
             <div className="eco-badge-text">

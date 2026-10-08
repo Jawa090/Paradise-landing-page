@@ -2,13 +2,15 @@ import React from 'react';
 
 export default function CoreValues() {
   const clientLogos = [
-    { name: 'Tri-State Building logo', src: '/clients/client-1-color.avif' },
+    { name: 'Tri-State Building logo', src: '/clients/client-1-color (1).avif' },
     { name: 'Murphy Kennedy Group', src: '/clients/client-12.avif' },
     { name: 'ABS Construction', src: '/clients/client-13.avif' },
     { name: 'T.B. Penick & Sons logo', src: '/clients/client-14.avif' },
-    { name: 'Kilowatt Electric', src: '/clients/client-15.avif' },
+    { name: 'Kilowatt Electric', src: '/clients/client-15 (1).avif' },
     { name: 'Empire Steel Works logo', src: '/clients/client-2.avif' },
-    { name: 'Lano Electric Co. logo', src: '/clients/client-4.avif' }
+    { name: 'Lano Electric Co. logo', src: '/clients/client-4 (1).avif' },
+    {name:'Kilowatt Electric', src:'/clients/client-7.avif'},
+    {name:'Empire', src:'/clients/client-10.avif'},
   ];
 
   return (

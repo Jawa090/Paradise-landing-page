@@ -24,7 +24,7 @@ export default function Header({ onGetQuoteClick, onLogoClick }) {
           </a>
           <div className="proud-partner-badge" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.75rem', color: '#64748b', borderLeft: '1px solid #e2e8f0', paddingLeft: '0.8rem' }}>
             <span>Proudly part of</span>
-            <img src="/logo11.png" alt="ContractorsList" style={{ height: '18px', width: 'auto' }} />
+            <img src="/logo11.png" alt="ContractorsList" style={{ height: '32px', width: 'auto' }} />
           </div>
         </div>
 

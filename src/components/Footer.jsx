@@ -62,15 +62,42 @@ export default function Footer({ onOpenLegal, onLogoClick, onUploadClick, onGetQ
       <div className="footer-bottom-section" style={{ padding: '3.5rem 1.5rem 2.5rem 1.5rem', backgroundColor: '#070d18' }}>
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '2rem' }}>
           
-          {/* Left Column: Brand & Address */}
-          <div style={{ maxWidth: '400px' }}>
+          {/* Left Column: Brand & Addresses */}
+          <div style={{ maxWidth: '650px' }}>
             <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#ffffff', marginBottom: '0.75rem' }}>Paradise Estimating</h3>
-            <p style={{ fontSize: '0.88rem', color: '#94a3b8', lineHeight: 1.5, marginBottom: '0.75rem' }}>
+            <p style={{ fontSize: '0.88rem', color: '#94a3b8', lineHeight: 1.5, marginBottom: '1.5rem' }}>
               Construction estimating and quantity takeoff services for U.S. contractors since 2012.
             </p>
-            <p style={{ fontSize: '0.88rem', color: '#64748b' }}>
-              898 Bay Ridge Avenue, Brooklyn, NY 11220
-            </p>
+
+            {/* 3 USA Regional Locations */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1.25rem', marginTop: '1rem' }}>
+              <div>
+                <strong style={{ display: 'block', fontSize: '0.72rem', letterSpacing: '0.05em', color: '#56b32b', marginBottom: '0.25rem' }}>
+                  USA | NEW YORK
+                </strong>
+                <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.45, margin: 0 }}>
+                  896 Bay Ridge Avenue<br />Brooklyn NY 11220
+                </p>
+              </div>
+
+              <div>
+                <strong style={{ display: 'block', fontSize: '0.72rem', letterSpacing: '0.05em', color: '#56b32b', marginBottom: '0.25rem' }}>
+                  USA | TEXAS
+                </strong>
+                <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.45, margin: 0 }}>
+                  1001 McKinney St, Suite 1100<br />Houston, TX 77002, USA
+                </p>
+              </div>
+
+              <div>
+                <strong style={{ display: 'block', fontSize: '0.72rem', letterSpacing: '0.05em', color: '#56b32b', marginBottom: '0.25rem' }}>
+                  USA | FLORIDA
+                </strong>
+                <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.45, margin: 0 }}>
+                  123 Construction Blvd, Suite 101<br />Orlando, FL 32801
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Right Column: Contact & Legal Links */}
