@@ -60,85 +60,85 @@ export default function Footer({ onOpenLegal, onLogoClick, onUploadClick, onGetQ
 
       {/* Bottom Main Footer details */}
       <div className="footer-bottom-section" style={{ padding: '3.5rem 1.5rem 2.5rem 1.5rem', backgroundColor: '#070d18' }}>
-        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '3rem' }}>
+        <div className="container footer-main-container">
           
           {/* Left Column: Brand & Addresses */}
-          <div style={{ flex: '1 1 650px', maxWidth: '750px' }}>
-            <img src="logo.webp" alt="Paradise Estimating" style={{fontSize: '1.15rem', fontWeight: 800, color: '#ffffff', marginBottom: '0.75rem', width: '100px', height: 'auto' }}/>
-            <p style={{ fontSize: '0.88rem', color: '#94a3b8', lineHeight: 1.5, marginBottom: '1.75rem' }}>
+          <div className="footer-left-col">
+            <img src="logo.webp" alt="Paradise Estimating" className="footer-logo-img" />
+            <p className="footer-brand-intro">
               Construction estimating and quantity takeoff services for U.S. contractors since 2012.
             </p>
 
             {/* 5 USA Regional Locations Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem 2rem' }}>
-              <div>
-                <strong style={{ display: 'block', fontSize: '0.72rem', letterSpacing: '0.05em', color: '#56b32b', marginBottom: '0.25rem' }}>
+            <div className="footer-locations-grid">
+              <div className="footer-location-item">
+                <strong className="footer-location-tag">
                   USA | NEW YORK
                 </strong>
-                <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.45, margin: 0 }}>
+                <p className="footer-location-addr">
                   896 Bay Ridge Avenue<br />Brooklyn, NY 11220
                 </p>
               </div>
 
-              <div>
-                <strong style={{ display: 'block', fontSize: '0.72rem', letterSpacing: '0.05em', color: '#56b32b', marginBottom: '0.25rem' }}>
+              <div className="footer-location-item">
+                <strong className="footer-location-tag">
                   USA | TEXAS
                 </strong>
-                <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.45, margin: 0 }}>
+                <p className="footer-location-addr">
                   1001 McKinney St, Suite 1100<br />Houston, TX 77002
                 </p>
               </div>
 
-              <div>
-                <strong style={{ display: 'block', fontSize: '0.72rem', letterSpacing: '0.05em', color: '#56b32b', marginBottom: '0.25rem' }}>
+              <div className="footer-location-item">
+                <strong className="footer-location-tag">
                   USA | FLORIDA
                 </strong>
-                <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.45, margin: 0 }}>
+                <p className="footer-location-addr">
                   111 N Orange Ave, Suite 800<br />Orlando, FL 32801
                 </p>
               </div>
 
-              <div>
-                <strong style={{ display: 'block', fontSize: '0.72rem', letterSpacing: '0.05em', color: '#56b32b', marginBottom: '0.25rem' }}>
+              <div className="footer-location-item">
+                <strong className="footer-location-tag">
                   USA | CALIFORNIA
                 </strong>
-                <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.45, margin: 0 }}>
+                <p className="footer-location-addr">
                   400 S Hope St, Suite 900<br />Los Angeles, CA 90071
                 </p>
               </div>
 
-              <div>
-                <strong style={{ display: 'block', fontSize: '0.72rem', letterSpacing: '0.05em', color: '#56b32b', marginBottom: '0.25rem' }}>
+              <div className="footer-location-item">
+                <strong className="footer-location-tag">
                   USA | ARIZONA
                 </strong>
-                <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.45, margin: 0 }}>
+                <p className="footer-location-addr">
                   250 N Central Ave, Suite 400<br />Phoenix, AZ 85004
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Contact Details (Vertically Centered in Row) */}
-          <div style={{ textAlign: 'right', minWidth: '220px' }}>
+          {/* Right Column: Contact Details */}
+          <div className="footer-contact-box">
             <div style={{ marginBottom: '0.5rem' }}>
-              <a href="tel:7187196171" style={{ fontSize: '1.15rem', fontWeight: 800, color: '#ffffff', textDecoration: 'none' }}>
+              <a href="tel:7187196171" className="footer-phone-link">
                 (718) 719–6171
               </a>
             </div>
             <div>
-              <a href="mailto:sales@paradiseestimating.com" style={{ fontSize: '0.88rem', color: '#94a3b8', textDecoration: 'none' }}>
+              <a href="mailto:sales@paradiseestimating.com" className="footer-email-link">
                 sales@paradiseestimating.com
               </a>
             </div>
           </div>
         </div>
 
-        <div className="container" style={{ maxWidth: '1200px', margin: '2.5rem auto 0 auto', paddingTop: '1.5rem', borderTop: '1px solid #1e293b', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-          <p style={{ fontSize: '0.78rem', color: '#475569', margin: 0 }}>
+        <div className="container footer-sub-container">
+          <p className="footer-copyright-text">
             &copy; 2026 Paradise Estimating. All rights reserved.
           </p>
 
-          <div style={{ display: 'flex', gap: '1rem', fontSize: '0.82rem', color: '#64748b' }}>
+          <div className="footer-legal-links">
             <a onClick={() => onOpenLegal('privacy')} style={{ cursor: 'pointer', textDecoration: 'underline' }}>Privacy Policy</a>
             <a onClick={() => onOpenLegal('terms')} style={{ cursor: 'pointer', textDecoration: 'underline' }}>Terms</a>
             <a onClick={onGetQuoteClick || scrollToQuote} style={{ cursor: 'pointer', textDecoration: 'underline' }}>Contact</a>

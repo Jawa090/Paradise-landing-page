@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-export default function CustomVideoPlayer({ src = '/video.mp4', poster }) {
+export default function CustomVideoPlayer({ src = '/video.mp4', poster = '/video-thumbnail.png' }) {
   const videoRef = useRef(null);
   const containerRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -184,30 +184,6 @@ export default function CustomVideoPlayer({ src = '/video.mp4', poster }) {
           </svg>
         </button>
       )}
-
-      {/* Top Brand Tag Overlay */}
-      <div 
-        style={{
-          position: 'absolute',
-          top: '12px',
-          left: '12px',
-          backgroundColor: '#eef8ea',
-          border: '1px solid #dcf0d3',
-          borderRadius: '20px',
-          padding: '4px 12px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '6px',
-          color: '#3d8618',
-          fontSize: '0.75rem',
-          fontWeight: 600,
-          zIndex: 2,
-          pointerEvents: 'none'
-        }}
-      >
-        <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#56b32b', display: 'inline-block' }}></span>
-        <span>Paradise Estimating</span>
-      </div>
 
     </div>
   );

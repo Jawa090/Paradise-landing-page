@@ -45,25 +45,19 @@ export default function PricingSection({ onUploadClick }) {
         </div>
 
         {/* Pricing Cards Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
+        <div className="pricing-grid">
           {pricingTiers.map((tier, idx) => (
             <div
               key={idx}
-              style={{
-                backgroundColor: '#ffffff',
-                border: tier.featured ? '2px solid #56b32b' : '1px solid #e2e8f0',
-                borderRadius: '16px',
-                padding: '2rem 1.5rem',
-                boxShadow: tier.featured ? '0 10px 25px -5px rgba(86, 179, 43, 0.15)' : '0 2px 4px rgba(0,0,0,0.02)'
-              }}
+              className={`pricing-card ${tier.featured ? 'featured' : ''}`}
             >
-              <span style={{ fontSize: '0.7rem', letterSpacing: '0.05em', textTransform: 'uppercase', color: '#64748b', fontWeight: 700, display: 'block', marginBottom: '0.75rem' }}>
+              <span className="pricing-tier-tag">
                 {tier.tag}
               </span>
-              <strong style={{ display: 'block', fontSize: '2.2rem', fontWeight: 800, color: '#0f172a', lineHeight: 1, marginBottom: '0.75rem' }}>
+              <strong className="pricing-tier-price">
                 {tier.price}
               </strong>
-              <p style={{ fontSize: '0.85rem', color: '#64748b', lineHeight: 1.5, margin: 0 }}>
+              <p className="pricing-tier-desc">
                 {tier.desc}
               </p>
             </div>
@@ -75,20 +69,7 @@ export default function PricingSection({ onUploadClick }) {
         </p>
 
         {/* Green Offer Banner */}
-        <div
-          style={{
-            backgroundColor: '#56b32b',
-            color: '#ffffff',
-            borderRadius: '20px',
-            padding: '2.5rem',
-            display: 'flex',
-            alignItems: 'center',
-            justify: 'space-between',
-            gap: '2rem',
-            flexWrap: 'wrap',
-            boxShadow: '0 10px 30px -5px rgba(86, 179, 43, 0.3)'
-          }}
-        >
+        <div className="pricing-offer-banner">
           <div>
             <span style={{ fontSize: '0.7rem', letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.85)', fontWeight: 700, display: 'block', marginBottom: '0.4rem' }}>
               NEW CUSTOMER OFFER

@@ -23,39 +23,39 @@ export default function CoreValues() {
         </p>
 
         {/* 5 Stat Columns */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '1.5rem', textAlign: 'left', marginBottom: '2.5rem', borderBottom: '1px solid #f1f5f9', paddingBottom: '2.5rem' }}>
+        <div className="core-stats-grid">
           
-          <div style={{ borderLeft: '3px solid #e2e8f0', paddingLeft: '1rem' }}>
-            <strong style={{ display: 'block', fontSize: '2.4rem', fontWeight: 800, color: '#0f172a', lineHeight: 1 }}>14+</strong>
-            <span style={{ fontSize: '0.7rem', letterSpacing: '0.04em', textTransform: 'uppercase', color: '#64748b', fontWeight: 700, marginTop: '0.4rem', display: 'block' }}>
+          <div className="stat-item">
+            <strong className="stat-number">14+</strong>
+            <span className="stat-label">
               YEARS EXPERIENCE
             </span>
           </div>
 
-          <div style={{ borderLeft: '3px solid #e2e8f0', paddingLeft: '1rem' }}>
-            <strong style={{ display: 'block', fontSize: '2.4rem', fontWeight: 800, color: '#0f172a', lineHeight: 1 }}>50,000+</strong>
-            <span style={{ fontSize: '0.7rem', letterSpacing: '0.04em', textTransform: 'uppercase', color: '#64748b', fontWeight: 700, marginTop: '0.4rem', display: 'block' }}>
+          <div className="stat-item">
+            <strong className="stat-number">50,000+</strong>
+            <span className="stat-label">
               CONTRACTORS SERVED
             </span>
           </div>
 
-          <div style={{ borderLeft: '3px solid #e2e8f0', paddingLeft: '1rem' }}>
-            <strong style={{ display: 'block', fontSize: '2.4rem', fontWeight: 800, color: '#0f172a', lineHeight: 1 }}>$1.5B+</strong>
-            <span style={{ fontSize: '0.7rem', letterSpacing: '0.04em', textTransform: 'uppercase', color: '#64748b', fontWeight: 700, marginTop: '0.4rem', display: 'block' }}>
+          <div className="stat-item">
+            <strong className="stat-number">$1.5B+</strong>
+            <span className="stat-label">
               PROJECT VALUE ESTIMATED
             </span>
           </div>
 
-          <div style={{ borderLeft: '3px solid #e2e8f0', paddingLeft: '1rem' }}>
-            <strong style={{ display: 'block', fontSize: '2.4rem', fontWeight: 800, color: '#0f172a', lineHeight: 1 }}>100+</strong>
-            <span style={{ fontSize: '0.7rem', letterSpacing: '0.04em', textTransform: 'uppercase', color: '#64748b', fontWeight: 700, marginTop: '0.4rem', display: 'block' }}>
+          <div className="stat-item">
+            <strong className="stat-number">100+</strong>
+            <span className="stat-label">
               ESTIMATING PROFESSIONALS
             </span>
           </div>
 
-          <div style={{ borderLeft: '3px solid #e2e8f0', paddingLeft: '1rem' }}>
-            <strong style={{ display: 'block', fontSize: '2.4rem', fontWeight: 800, color: '#0f172a', lineHeight: 1 }}>24–48 hr</strong>
-            <span style={{ fontSize: '0.7rem', letterSpacing: '0.04em', textTransform: 'uppercase', color: '#64748b', fontWeight: 700, marginTop: '0.4rem', display: 'block' }}>
+          <div className="stat-item">
+            <strong className="stat-number">24–48 hr</strong>
+            <span className="stat-label">
               TYPICAL TURNAROUND
             </span>
           </div>
@@ -63,16 +63,18 @@ export default function CoreValues() {
         </div>
 
         {/* Client Logos Grid */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '2.5rem', opacity: 0.85 }}>
-          {clientLogos.map((logo, idx) => (
-            <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <img 
-                src={logo.src} 
-                alt={logo.name} 
-                style={{ maxHeight: '48px', maxWidth: '160px', objectFit: 'contain' }} 
-              />
-            </div>
-          ))}
+        <div className="logo-marquee-container">
+          <div className="logo-marquee-track">
+            {[...clientLogos, ...clientLogos].map((logo, idx) => (
+              <div key={idx} className="logo-marquee-item">
+                <img 
+                  src={logo.src} 
+                  alt={logo.name} 
+                  className="logo-marquee-img"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>

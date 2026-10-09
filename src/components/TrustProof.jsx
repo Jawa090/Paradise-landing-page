@@ -28,7 +28,7 @@ export default function TrustProof({ onOpenSample, onUploadClick }) {
             See what your estimate<br />looks like
           </h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2.5rem' }}>
+          <div className="trust-proof-grid">
             <div>
               <strong style={{ display: 'block', fontSize: '0.9rem', color: '#ffffff', marginBottom: '0.3rem' }}>
                 Detailed quantity takeoffs
@@ -66,7 +66,7 @@ export default function TrustProof({ onOpenSample, onUploadClick }) {
             </div>
           </div>
 
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <div className="trust-proof-buttons">
             <button
               type="button"
               className="btn"

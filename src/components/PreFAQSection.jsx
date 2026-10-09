@@ -117,23 +117,9 @@ export default function PreFAQSection({ onUploadClick, onGetQuoteClick }) {
         </div>
 
         {/* Have a project coming up for bid? CTA Card (Matching exact screenshot design) */}
-        <div 
-          className="upcoming-bid-card"
-          style={{
-            backgroundColor: '#ffffff',
-            borderRadius: '20px',
-            padding: '2.5rem',
-            display: 'flex',
-            alignItems: 'center',
-            justify: 'space-between',
-            gap: '2rem',
-            flexWrap: 'wrap',
-            boxShadow: '0 10px 30px -5px rgba(0,0,0,0.05)',
-            border: '1px solid #f1f5f9'
-          }}
-        >
+        <div className="upcoming-bid-card">
           {/* Left Text & Actions */}
-          <div style={{ maxWidth: '540px' }}>
+          <div className="upcoming-bid-content">
             <h2 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#0f172a', lineHeight: 1.2, marginBottom: '0.75rem' }}>
               Have a project coming up for bid?
             </h2>
@@ -141,7 +127,7 @@ export default function PreFAQSection({ onUploadClick, onGetQuoteClick }) {
               Don't let a full desk cost you the next job. Send your plans and get estimating support with a typical 24–48 hour turnaround.
             </p>
 
-            <div style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
+            <div className="upcoming-bid-actions">
               <button
                 type="button"
                 className="btn"
@@ -183,17 +169,7 @@ export default function PreFAQSection({ onUploadClick, onGetQuoteClick }) {
           </div>
 
           {/* Right Green Callout Card */}
-          <div
-            style={{
-              backgroundColor: '#eef8ea',
-              border: '1px solid #dcf0d3',
-              borderRadius: '16px',
-              padding: '1.75rem 2rem',
-              minWidth: '280px',
-              maxWidth: '360px',
-              flex: '1'
-            }}
-          >
+          <div className="upcoming-bid-green-card">
             <strong style={{ display: 'block', fontSize: '1rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.4rem' }}>
               Bid deadline within 48 hours?
             </strong>

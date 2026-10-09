@@ -16,10 +16,10 @@ export default function WhyOutsourceSection() {
         </div>
 
         {/* 2 Column Comparison Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
+        <div className="why-outsource-grid">
           
           {/* Left Box: Hiring in-house */}
-          <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '16px', padding: '2rem' }}>
+          <div className="outsource-card left-card">
             <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0f172a', marginBottom: '1.25rem' }}>
               Hiring in-house
             </h3>
@@ -41,7 +41,7 @@ export default function WhyOutsourceSection() {
           </div>
 
           {/* Right Box: Paradise Estimating */}
-          <div style={{ backgroundColor: '#ffffff', border: '2px solid #56b32b', borderRadius: '16px', padding: '2rem', boxShadow: '0 10px 25px -5px rgba(86, 179, 43, 0.1)' }}>
+          <div className="outsource-card right-card">
             <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0f172a', marginBottom: '1.25rem' }}>
               Paradise Estimating
             </h3>

@@ -2460,9 +2460,7 @@ textarea {
     justify-content: center;
   }
 
-  .header-right .btn-primary {
-    display: none;
-  }
+  /* .header-right .btn-primary was hidden here, removed to keep visible */
 
   .header-phone-label {
     display: none;
@@ -2561,6 +2559,202 @@ textarea {
 }
 
 /* ==========================================================================
+   ENHANCED RESPONSIVE DESIGN (Header, Hero, Ecosystem Badge, Form, Footer)
+   ========================================================================== */
+.footer-main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.footer-left-col {
+  flex: 1 1 650px;
+  max-width: 750px;
+}
+
+.footer-logo-img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 0.75rem;
+}
+
+.footer-brand-intro {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-bottom: 1.75rem;
+}
+
+.footer-locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1.5rem 2rem;
+}
+
+.footer-location-tag {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: #56b32b;
+  margin-bottom: 0.25rem;
+}
+
+.footer-location-addr {
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.footer-contact-box {
+  text-align: right;
+  min-width: 220px;
+}
+
+.footer-phone-link {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-email-link {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+.footer-sub-container {
+  max-width: 1200px;
+  margin: 2.5rem auto 0 auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copyright-text {
+  font-size: 0.78rem;
+  color: #475569;
+  margin: 0;
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+@media (max-width: 992px) {
+  .header-brand-wrap {
+    gap: 0.6rem;
+  }
+  
+  .proud-partner-badge {
+    padding-left: 0.6rem;
+    font-size: 0.7rem;
+  }
+
+  .proud-partner-badge img {
+    height: 28px !important;
+  }
+
+  .hero-heading {
+    font-size: 2.35rem !important;
+  }
+
+  .hero-offer-cta-box {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0.6rem !important;
+  }
+
+  .footer-left-col {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .footer-contact-box {
+    text-align: left;
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    padding: 0.25rem 0;
+  }
+
+  .header-inner {
+    height: 68px;
+  }
+
+  .brand-logo-img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .proud-partner-badge span {
+    display: none;
+  }
+
+  .proud-partner-badge {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  /* .header-phone-info was hidden here, removed to keep visible */
+
+  .hero-section {
+    padding: 2rem 0 3rem;
+  }
+
+  .hero-heading {
+    font-size: 1.85rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .hero-intro {
+    font-size: 0.95rem !important;
+  }
+
+  .hero-bullets {
+    gap: 0.65rem 1rem !important;
+  }
+
+  .ecosystem-trust-badge {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .eco-badge-logo-wrap {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .footer-locations-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .footer-sub-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+/* ==========================================================================
    REVIEWS CONTINUOUS TICKER SLIDER (Left to Right, Pause on Hover)
    ========================================================================== */
 .reviews-slider-track-wrap {
@@ -2622,4 +2816,453 @@ textarea {
   border: 2px solid #ffffff;
   box-shadow: 0 0 6px rgba(86, 179, 43, 0.8);
   cursor: pointer;
-}
+}
+
+/* Base Classes for Extracted Inline Styles */
+.header-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.proud-partner-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: #64748b;
+  border-left: 1px solid #e2e8f0;
+  padding-left: 0.8rem;
+}
+.header-phone-info {
+  text-align: right;
+}
+.header-phone-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  font-weight: 600;
+  display: block;
+}
+.header-phone-num {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+.header-get-quote-btn {
+  background-color: #56b32b !important;
+  border-color: #56b32b !important;
+  color: #ffffff !important;
+  border-radius: 9999px;
+  padding: 0.65rem 1.4rem;
+  font-weight: 700;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.pricing-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.pricing-card.featured {
+  border: 2px solid #56b32b;
+  box-shadow: 0 10px 25px -5px rgba(86, 179, 43, 0.15);
+}
+.pricing-tier-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #64748b;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.pricing-tier-price {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+.pricing-tier-desc {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+.pricing-offer-banner {
+  background-color: #56b32b;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  box-shadow: 0 10px 30px -5px rgba(86, 179, 43, 0.3);
+}
+
+/* Comprehensive Responsive Adjustments */
+@media (max-width: 992px) {
+  .header-brand-wrap {
+    gap: 0.2rem;
+  }
+  .proud-partner-badge {
+    /* Kept visible, made smaller */
+    transform: scale(0.85);
+    transform-origin: left center;
+  }
+  .brand-logo-img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header - Keep on one line but scaled down */
+  .site-header .header-inner {
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    justify-content: space-between;
+  }
+  .header-brand-wrap {
+    width: auto;
+    justify-content: flex-start;
+  }
+  .header-right {
+    width: auto;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+  .header-phone-info {
+    text-align: right;
+  }
+  .header-phone-label {
+    font-size: 0.6rem;
+  }
+  .header-phone-num {
+    font-size: 0.85rem;
+  }
+  .header-get-quote-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  /* Pricing */
+  .pricing-offer-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .pricing-offer-banner button {
+    width: 100%;
+  }
+
+  /* Pricing */
+  .pricing-offer-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .pricing-offer-banner button {
+    width: 100%;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .pricing-card {
+    padding: 1rem;
+  }
+  .pricing-tier-price {
+    font-size: 1.4rem;
+  }
+  .pricing-tier-tag {
+    font-size: 0.6rem;
+  }
+  .pricing-tier-desc {
+    font-size: 0.75rem;
+  }
+
+  /* Hero */
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-actions button {
+    width: 100%;
+    text-align: center;
+  }
+  .hero-offer-cta-box {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  /* Upload Form */
+  .grid-cols-3, .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+  .submit-foot-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-logo-img {
+    width: 48px;
+    height: 48px;
+  }
+  .proud-partner-badge {
+    transform: scale(0.65);
+    margin-left: -5px; /* pull closer to logo */
+  }
+  .header-phone-label {
+    display: none; /* Hide 'Talk to an estimator' text to save space */
+  }
+  .header-phone-num {
+    font-size: 0.75rem;
+  }
+  .header-get-quote-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+  .site-header .header-inner {
+    padding: 0.5rem 0.25rem;
+    gap: 0.25rem;
+  }
+  .header-brand-wrap {
+    gap: 0;
+  }
+}
+
+/* Trust Proof Classes */
+.trust-proof-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.trust-proof-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .trust-proof-grid {
+    grid-template-columns: 1fr;
+  }
+  .trust-proof-buttons button {
+    width: 100%;
+  }
+}
+
+/* Core Values Stats Classes */
+.core-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1.5rem;
+  text-align: left;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 2.5rem;
+}
+.stat-item {
+  border-left: 3px solid #e2e8f0;
+  padding-left: 1rem;
+}
+.stat-number {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #64748b;
+  font-weight: 700;
+  margin-top: 0.4rem;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .core-stats-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 0.25rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    text-align: center;
+  }
+  .stat-item {
+    border-left: none; /* Remove borders on mobile for space */
+    padding-left: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .stat-number {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+  }
+  .stat-label {
+    font-size: 0.45rem;
+    letter-spacing: 0;
+    margin-top: 0;
+    line-height: 1.2;
+  }
+}
+
+/* Client Logo Marquee */
+.logo-marquee-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  opacity: 0.85;
+}
+.logo-marquee-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+.logo-marquee-item {
+  display: flex;
+  align-items: center;
+}
+.logo-marquee-img {
+  max-height: 48px;
+  max-width: 160px;
+  object-fit: contain;
+}
+
+@media (min-width: 769px) {
+  /* On desktop, hide the duplicated logos used for mobile animation */
+  .logo-marquee-item:nth-child(n+10) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-marquee-track {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: max-content;
+    animation: scrollMarquee 25s linear infinite;
+  }
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Upcoming Bid Card Classes */
+.upcoming-bid-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.05);
+  border: 1px solid #f1f5f9;
+}
+.upcoming-bid-content {
+  max-width: 540px;
+}
+.upcoming-bid-actions {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+.upcoming-bid-green-card {
+  background-color: #eef8ea;
+  border: 1px solid #dcf0d3;
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  min-width: 280px;
+  max-width: 360px;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .upcoming-bid-card {
+    flex-direction: column;
+    padding: 1.5rem;
+    align-items: stretch;
+    text-align: center;
+  }
+  .upcoming-bid-content {
+    max-width: 100%;
+  }
+  .upcoming-bid-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .upcoming-bid-actions button {
+    width: 100%;
+  }
+  .upcoming-bid-green-card {
+    max-width: 100%;
+    min-width: 100%;
+    text-align: center;
+  }
+}
+
+/* Why Outsource Section */
+.why-outsource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+.outsource-card {
+  padding: 2rem;
+  border-radius: 16px;
+}
+.outsource-card.left-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+.outsource-card.right-card {
+  background-color: #ffffff;
+  border: 2px solid #56b32b;
+  box-shadow: 0 10px 25px -5px rgba(86, 179, 43, 0.1);
+}
+
+@media (max-width: 768px) {
+  .why-outsource-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .outsource-card {
+    padding: 1.25rem;
+  }
+  .outsource-card h3 {
+    font-size: 1.1rem !important;
+  }
+  .outsource-card li {
+    font-size: 0.8rem !important;
+  }
+}
