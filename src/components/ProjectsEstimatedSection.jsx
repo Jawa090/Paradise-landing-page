@@ -49,7 +49,7 @@ export default function ProjectsEstimatedSection() {
         </div>
 
         {/* 4 Column / 2 Row Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '2rem 1.5rem', borderTop: '1px solid #f1f5f9', paddingTop: '1.5rem', marginBottom: '2.5rem' }}>
+        <div className="projects-estimated-grid">
           {projectItems.map((p, idx) => (
             <div key={idx} style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '1.25rem' }}>
               <span style={{ fontSize: '0.68rem', letterSpacing: '0.05em', textTransform: 'uppercase', color: '#94a3b8', fontWeight: 700, display: 'block', marginBottom: '0.4rem' }}>

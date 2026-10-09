@@ -30,8 +30,10 @@
   --color-star: #f59e0b;
   --color-success: #16a34a;
 
-  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: 'Space Grotesk', ui-monospace, monospace;
+  --font-main:
+    "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  --font-mono: "Space Grotesk", ui-monospace, monospace;
 
   --radius-sm: 6px;
   --radius-md: 10px;
@@ -40,9 +42,13 @@
   --radius-pill: 9999px;
 
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 20px 35px -5px rgba(15, 23, 42, 0.12), 0 8px 16px -6px rgba(15, 23, 42, 0.06);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg:
+    0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --shadow-xl:
+    0 20px 35px -5px rgba(15, 23, 42, 0.12),
+    0 8px 16px -6px rgba(15, 23, 42, 0.06);
   --shadow-green: 0 8px 24px rgba(101, 184, 44, 0.35);
 }
 
@@ -249,7 +255,9 @@ textarea {
 .brand-logo-link {
   display: flex;
   align-items: center;
-  transition: opacity 0.2s, transform 0.2s;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
   padding: 0;
   margin: 0;
 }
@@ -2657,7 +2665,7 @@ textarea {
   .header-brand-wrap {
     gap: 0.6rem;
   }
-  
+
   .proud-partner-badge {
     padding-left: 0.6rem;
     font-size: 0.7rem;
@@ -2869,7 +2877,7 @@ textarea {
   border: 1px solid #e2e8f0;
   border-radius: 16px;
   padding: 2rem 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 .pricing-card.featured {
   border: 2px solid #56b32b;
@@ -3009,9 +3017,10 @@ textarea {
     flex-direction: column;
     text-align: center;
   }
-  
+
   /* Upload Form */
-  .grid-cols-3, .grid-cols-2 {
+  .grid-cols-3,
+  .grid-cols-2 {
     grid-template-columns: 1fr !important;
   }
   .submit-foot-group {
@@ -3157,7 +3166,7 @@ textarea {
 
 @media (min-width: 769px) {
   /* On desktop, hide the duplicated logos used for mobile animation */
-  .logo-marquee-item:nth-child(n+10) {
+  .logo-marquee-item:nth-child(n + 10) {
     display: none;
   }
 }
@@ -3172,8 +3181,12 @@ textarea {
 }
 
 @keyframes scrollMarquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Upcoming Bid Card Classes */
@@ -3186,7 +3199,7 @@ textarea {
   justify-content: space-between;
   gap: 2rem;
   flex-wrap: wrap;
-  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
   border: 1px solid #f1f5f9;
 }
 .upcoming-bid-content {
@@ -3263,6 +3276,115 @@ textarea {
     font-size: 1.1rem !important;
   }
   .outsource-card li {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Global Section Headings */
+.section-heading-lg {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.15;
+}
+
+@media (max-width: 768px) {
+  h2,
+  .section-heading-lg,
+  .title-lg,
+  .upload-heading,
+  .quote-card-heading,
+  .hero-heading {
+    font-size: 1.9rem !important;
+    line-height: 1.2 !important;
+  }
+  button,
+  .btn,
+  .btn-primary {
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  h2,
+  .section-heading-lg,
+  .title-lg,
+  .upload-heading,
+  .quote-card-heading,
+  .hero-heading {
+    font-size: 1.65rem !important;
+    line-height: 1.15 !important;
+  }
+  button,
+  .btn,
+  .btn-primary {
+    padding: 0.5rem 0.2rem !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Trades We Estimate Section */
+.trades-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.trade-pill {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.78rem;
+  color: #334155;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .trade-pill {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.72rem;
+  }
+}
+
+/* Grids: Support & Projects */
+.support-contractors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.projects-estimated-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem 1.5rem;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 640px) {
+  .support-contractors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .support-contractors-grid > div {
+    padding: 1rem !important; /* reduce padding in cards */
+  }
+  .support-contractors-grid strong {
+    font-size: 0.65rem !important;
+  }
+  .support-contractors-grid p {
+    font-size: 0.75rem !important;
+  }
+
+  .projects-estimated-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 0.75rem;
+  }
+  .projects-estimated-grid strong {
     font-size: 0.8rem !important;
   }
 }

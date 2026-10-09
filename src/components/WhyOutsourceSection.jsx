@@ -10,7 +10,7 @@ export default function WhyOutsourceSection() {
           <span style={{ backgroundColor: '#eef8ea', color: '#3d8618', borderRadius: '9999px', padding: '0.25rem 0.85rem', fontSize: '0.78rem', fontWeight: 600, display: 'inline-block', marginBottom: '0.75rem' }}>
             Built to help contractors bid faster
           </span>
-          <h2 style={{ fontSize: '2.4rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>
+          <h2 className="section-heading-lg">
             Why outsource your construction<br />estimating?
           </h2>
         </div>
