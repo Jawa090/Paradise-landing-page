@@ -212,6 +212,7 @@ export default function App() {
         if (submission.deadline && submission.deadline !== 'Within 24–48 Hours') notesParts.push(`Bid Deadline: ${submission.deadline}`);
         if (details) notesParts.push(`Project Details: ${details}`);
         if (fileNames) notesParts.push(`📎 Blueprint File: ${fileNames}`);
+        const notesText = notesParts.join('\n');
 
         let crmReq;
         if (firstFile) {
