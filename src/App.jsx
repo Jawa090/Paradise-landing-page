@@ -213,19 +213,33 @@ export default function App() {
         if (details) notesParts.push(`Project Details: ${details}`);
         if (fileNames) notesParts.push(`📎 Blueprint File: ${fileNames}`);
 
-        const notesText = notesParts.join('\n');
+        let crmReq;
+        if (firstFile) {
+          const crmFormData = new FormData();
+          crmFormData.append("name", submission.name);
+          if (submission.email) crmFormData.append("email", submission.email);
+          if (submission.phone) crmFormData.append("phone", submission.phone);
+          crmFormData.append("notes", notesText);
+          crmFormData.append("plan", firstFile, firstFile.name);
 
-        await fetch(crmEndpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", "X-API-Key": crmApiKey },
-          body: JSON.stringify({
-            name: submission.name,
-            email: submission.email,
-            phone: submission.phone,
-            notes: notesText,
-            attachment_name: firstFile ? firstFile.name : null
-          })
-        }).catch(err => console.error("[CRM Direct] Error:", err));
+          crmReq = fetch(crmEndpoint, {
+            method: "POST",
+            headers: { "X-API-Key": crmApiKey },
+            body: crmFormData,
+          });
+        } else {
+          crmReq = fetch(crmEndpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "X-API-Key": crmApiKey },
+            body: JSON.stringify({
+              name: submission.name,
+              email: submission.email,
+              phone: submission.phone,
+              notes: notesText,
+            }),
+          });
+        }
+        await crmReq.catch(err => console.error("[CRM Direct] Error:", err));
       }
     } catch (crmErr) {
       console.error("[CRM Direct] Submission error:", crmErr);
