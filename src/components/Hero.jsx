@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CustomVideoPlayer from './CustomVideoPlayer';
+import { formatPhoneNumber, validatePhoneNumber } from '../utils/phoneUtils';
 
 const serviceOptions = [
   'Commercial Estimating',
@@ -74,9 +75,7 @@ export default function Hero({
       }
     }
     if (fieldName === 'phone') {
-      const digits = trimmed.replace(/\D/g, '');
-      if (!trimmed) return 'Please enter your phone number.';
-      if (digits.length < 10) return 'Please enter a valid phone number (at least 10 digits).';
+      return validatePhoneNumber(value);
     }
     if (fieldName === 'service_trade') {
       if (!trimmed) return 'Please select a required trade or service.';
@@ -86,12 +85,13 @@ export default function Hero({
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const formattedValue = name === 'phone' ? formatPhoneNumber(value) : value;
+    setFormData(prev => ({ ...prev, [name]: formattedValue }));
     if (name === 'service_trade') {
-      onTradeChange(value);
+      onTradeChange(formattedValue);
     }
     if (touched[name] || errors[name]) {
-      const err = validateField(name, value);
+      const err = validateField(name, formattedValue);
       setErrors(prev => ({ ...prev, [name]: err }));
     }
     if (formAlert) setFormAlert('');
